@@ -2,7 +2,7 @@ import type { NextPage } from 'next'
 import { useContext } from 'react'
 import { ViewContext } from './context/ViewContext'
 
-const Frame: NextPage = () => {
+const Signing: NextPage = () => {
   const { user } = useContext(ViewContext)
   const { address } = user
 
@@ -13,4 +13,4 @@ const Frame: NextPage = () => {
   )
 }
 
-export default Frame
+export default Signing

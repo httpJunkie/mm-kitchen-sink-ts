@@ -1,7 +1,6 @@
 import type { NextPage } from 'next'
 
-
-const Frame: NextPage = () => {
+const Home: NextPage = () => {
 
   return (
     <>
@@ -10,4 +9,4 @@ const Frame: NextPage = () => {
   )
 }
 
-export default Frame
+export default Home
