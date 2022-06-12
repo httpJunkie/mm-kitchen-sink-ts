@@ -1,20 +1,24 @@
-import React, { useState, useEffect, createContext } from 'react'
-import { useMediaPredicate } from 'react-media-hook'
+import { useState, useEffect, createContext } from 'react'
+// import { useMediaPredicate } from 'react-media-hook'
 
 const AppContext = createContext()
 const AppProvider = props => {
-  const preferredTheme = useMediaPredicate('(prefers-color-scheme: dark)') ? 'dark' : 'light'
-  const getLocalStorageBykey = () => {
-    if (typeof window !== 'undefined') {
-      const item = localStorage.getItem('key')
-    }
-  }
+
+  // const preferredTheme = useMediaPredicate('(prefers-color-scheme: dark)') ? 'dark' : 'light'
+
+  // const getLocalStorageBykey = () => {
+  //   if (typeof window !== 'undefined') {
+  //     const item = localStorage.getItem('key')
+  //   }
+  // }
+
   const [appData, setApp] = useState({
     navOpen: false,
     toggleSidenav: value => setApp(data => (
       { ...data, navOpen: value }
     )),
-    themeMode: getLocalStorageBykey('space-x_theme') || preferredTheme,
+    themeMode: 'dark',
+    // themeMode: getLocalStorageBykey('space-x_theme') || preferredTheme,
     changeTheme: mode => setApp(data => (
       { ...data, themeMode: mode }
     ))
