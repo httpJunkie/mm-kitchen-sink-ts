@@ -1,6 +1,6 @@
 import { createContext, useEffect, useCallback } from 'react'
 import { initialState } from './initialState.js'
-import { reducer } from '../reducers/index'
+import { reducer } from './reducers/index'
 
 import { useImmerReducer } from 'use-immer'
 import { ethers } from 'ethers'
