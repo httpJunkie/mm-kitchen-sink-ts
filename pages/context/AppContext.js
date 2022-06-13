@@ -17,6 +17,10 @@ const AppProvider = props => {
     toggleSidenav: value => setApp(data => (
       { ...data, navOpen: value }
     )),
+    breakpoint: "default",
+    changeBreakpoint: value => setApp(data => (
+      { ...data, breakpoint: value }
+    )),
     themeMode: 'dark',
     // themeMode: getLocalStorageBykey('space-x_theme') || preferredTheme,
     changeTheme: mode => setApp(data => (
