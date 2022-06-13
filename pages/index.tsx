@@ -13,9 +13,9 @@ const Home: NextPage = () => {
   }, [breakpoint])
 
   return (
-    <>
-      <span>Home Page</span>
-    </>
+    <div className="home">
+      Signing
+    </div>
   )
 }
 
