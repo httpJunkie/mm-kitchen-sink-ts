@@ -24,10 +24,10 @@ const AppProvider = props => {
     ))
   })
 
-  useEffect(() => {
-      localStorage.setItem('space-x_theme', appData.themeMode)
-    }, [appData.themeMode]
-  )
+  // useEffect(() => {
+  //     localStorage.setItem('space-x_theme', appData.themeMode)
+  //   }, [appData.themeMode]
+  // )
 
   return <AppContext.Provider value={appData}>{props.children}</AppContext.Provider>
 }
