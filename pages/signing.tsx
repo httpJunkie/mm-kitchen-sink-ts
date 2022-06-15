@@ -2,14 +2,24 @@ import type { NextPage } from 'next'
 import { useContext } from 'react'
 import { ViewContext } from './context/ViewContext'
 
+import SignMessage from './wallet-components/SignMessage'
+
 const Signing: NextPage = () => {
   const { user } = useContext(ViewContext)
   const { address } = user
+  const message = "I agree to the terms and services at:\nhttps://metamask.com/tos"
+
+  const signMessageProps = {
+    message: message,
+    address: address.toString()
+  }
 
   return (
-    <div className="signing">
-      Signing
-    </div>
+    <>
+      <div>
+        <SignMessage {...signMessageProps} />
+      </div>
+    </>
   )
 }
 
