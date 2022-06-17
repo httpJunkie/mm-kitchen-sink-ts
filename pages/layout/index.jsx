@@ -14,10 +14,6 @@ const Layout = ({ children }) => {
   const { address } = user
   const context = useContext(AppContext)
 
-  // const { data, error } = useSWR('/api/navigation', fetcher)
-  // if (error) return <div>Failed to load</div>
-  // if (!data) return <div>Loading...</div>
-
   return (
     <div className={`app-container ${context.breakpoint} ${context.themeMode}`}>
       <main>

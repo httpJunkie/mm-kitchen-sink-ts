@@ -1,6 +1,12 @@
-const Button = ({ children, handleClick = null }) => {
+const Button = ({
+  marginTop = false,
+  marginBottom = false,
+  children,
+  handleClick = null
+}) => {
   return (
-    <button onClick={handleClick}>
+    <button
+      className={`mm-button ${marginBottom ? 'btn-marginBottom' : null} ${marginTop ? 'btn-marginTop' : null}`} onClick={handleClick}>
       {children}
     </button>
   )

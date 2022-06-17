@@ -22,9 +22,6 @@ const SignMessage = ({ message, address, signer }) => {
   const [verifyMessage, setVerifyMessage] = useState("")
   const [verifyErrorMessage, setVerifyErrorMessage] = useState("")
 
-  const [isOpen, setOpen] = useLocalStorage('is-open', false)
-  const handleToggle = () => setOpen(!isOpen)
-
   const handleVerifyMessage = async ({ message, address }) => {
     try {
       const signerAddress = await ethers.utils.verifyMessage(message, signedSuccess)
@@ -32,7 +29,7 @@ const SignMessage = ({ message, address, signer }) => {
       if (signerAddress !== address) {
         return false;
       }
-  
+
       return true;
     } catch (err) {
       console.log(err);
@@ -41,11 +38,11 @@ const SignMessage = ({ message, address, signer }) => {
   }
 
   const signMessage = async () => {
-      // await signer.signMessage("I agree to the terms and services at:\nhttps://metamask.com/tos")
-      await window.ethereum.request({
-        method: 'personal_sign',
-        params: [message, address]
-      })
+    // await signer.signMessage("I agree to the terms and services at:\nhttps://metamask.com/tos")
+    await window.ethereum.request({
+      method: 'personal_sign',
+      params: [message, address]
+    })
       .then(res => {
         setIsSignError(false)
         setIsSignSuccess(true)
@@ -73,30 +70,16 @@ const SignMessage = ({ message, address, signer }) => {
   return (
     <>
       <Button handleClick={signMessage}>
-        <p>Sign Message</p>
+        Sign Message
       </Button>
-      <Button handleClick={handleToggle}>
-        <p>Toggle - {isOpen ? "true" : "false"}</p>
-      </Button>
-      {/* {signedKeys.map(x => <div key={`${x}-sk's`}>{x}</div>)} */}
-      {
-        isSignError
-          ? <span>{signError}</span>
-          : isSignSuccess
-            ? <>
-              <span>Successful Sign</span>
-              <span>{signedSuccess}</span>
-              <Button handleClick={handleVerification}>
-                <p>Verify Message</p>
-              </Button>
-              {
-                verifyMessage !== ""
-                  ? verifyMessage
-                  : verifyErrorMessage
-              }
-            </>
-            : null
+      { isSignError && {signError} }
+      { isSignSuccess && <span>Successful Sign</span>}
+      { isSignSuccess && 
+        <Button handleClick={handleVerification}>
+          Verify Message
+        </Button>
       }
+      { verifyMessage !== "" ? verifyMessage : verifyErrorMessage  }
     </>
   )
 }

@@ -1,18 +1,6 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import Button from '../ui-components/Button'
 import { ethers } from 'ethers'
-
-const useLocalStorage = (storageKey, fallbackState) => {
-  const [value, setValue] = useState(
-    JSON.parse(localStorage.getItem(storageKey)) ?? fallbackState
-  )
-
-  useEffect(() => {
-    localStorage.setItem(storageKey, JSON.stringify(value));
-  }, [value, storageKey])
-
-  return [value, setValue]
-}
 
 const SignMessage = ({ message, address }) => {
   const [isSignError, setIsSignError] = useState(false)
@@ -21,9 +9,6 @@ const SignMessage = ({ message, address }) => {
   const [signedSuccess, setSignedSuccess] = useState("")
   const [verifyMessage, setVerifyMessage] = useState("")
   const [verifyErrorMessage, setVerifyErrorMessage] = useState("")
-
-  const [isOpen, setOpen] = useLocalStorage('is-open', false)
-  const handleToggle = () => setOpen(!isOpen)
 
   const handleVerifyMessage = async ({ message, address }) => {
     try {
@@ -81,30 +66,16 @@ const SignMessage = ({ message, address }) => {
   return (
     <>
       <Button handleClick={signMessage}>
-        <p>Sign Message</p>
+        Sign Message
       </Button>
-      <Button handleClick={handleToggle}>
-        <p>Toggle - {isOpen ? "true" : "false"}</p>
-      </Button>
-      {/* {signedKeys.map(x => <div key={`${x}-sk's`}>{x}</div>)} */}
-      {
-        isSignError
-          ? <span>{signError}</span>
-          : isSignSuccess
-            ? <>
-              <span>Successful Sign</span>
-              <span>{signedSuccess}</span>
-              <Button handleClick={handleVerification}>
-                <p>Verify Message</p>
-              </Button>
-              {
-                verifyMessage !== ""
-                  ? verifyMessage
-                  : verifyErrorMessage
-              }
-            </>
-            : null
+      { isSignError && {signError} }
+      { isSignSuccess && <span>Successful Sign</span>}
+      { isSignSuccess && 
+        <Button marginTop={true} handleClick={handleVerification}>
+          Verify Message
+        </Button>
       }
+      { verifyMessage !== "" ? verifyMessage : verifyErrorMessage  }
     </>
   )
 }

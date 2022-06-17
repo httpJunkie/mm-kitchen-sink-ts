@@ -1,0 +1,33 @@
+button.mm-button {
+  display: block;
+  border-radius: auto;
+  padding: none;
+  margin: none;
+}
+
+/** Rounded button **/
+button.mm-button.btn-rounded {
+  border-radius: 5rem;
+}
+
+/** Top margin **/
+button.mm-button.btn-marginTop {
+  margin-top: 0.5rem;
+}
+button.mm-button.btn-bottomTop {
+  margin-bottom: 0.5rem;
+}
+
+/* Light Theme */
+.app-container.light {
+  button.mm-button {
+    color: #FFF;
+  }
+}
+
+/* Dark Theme */
+.app-container.dark {
+  button.mm-button {
+    color: #333;
+  }
+}
