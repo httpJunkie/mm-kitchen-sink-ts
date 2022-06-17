@@ -3,6 +3,8 @@ import { useContext, useEffect } from 'react'
 import { useMediaPredicate } from 'react-media-hook'
 import { AppContext } from './context/AppContext'
 
+import { SiEthereum } from 'react-icons/si';
+
 const Home: NextPage = () => {
   const context = useContext(AppContext)
   const isMedium = useMediaPredicate('(min-width: 600px)')
@@ -14,7 +16,7 @@ const Home: NextPage = () => {
 
   return (
     <div className="home">
-      Signing
+      <SiEthereum />
     </div>
   )
 }
