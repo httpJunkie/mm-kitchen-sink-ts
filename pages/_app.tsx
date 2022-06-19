@@ -6,6 +6,7 @@ import '../styles/Hamburger.scss'
 import '../styles/Switcher.scss'
 import '../styles/Button.scss'
 import '../styles/Link.scss'
+import '../styles/Logo.scss'
 
 import type { AppProps } from 'next/app'
 import { ViewProvider } from './context/ViewContext'

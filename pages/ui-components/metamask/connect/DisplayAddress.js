@@ -1,6 +1,5 @@
 import { useContext } from 'react'
-
-import { ViewContext } from '../../../context/ViewProvider'
+import { ViewContext } from '../../../context/ViewContext'
 
 // const Wrap = styled.div`
 //   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -25,8 +24,8 @@ const DisplayAddress = () => {
   }
 
   return (
-    <div>
-      <p>{formatAddress(address)}</p>
+    <div className="display">
+      <span className="text">{formatAddress(address)}</span>
     </div>
   )
 }

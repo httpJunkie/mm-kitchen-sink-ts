@@ -33,7 +33,7 @@ After install of NextJS, remove `App.tsx`, `App.css`, and `index.css` from the r
 1. In `ui-components` directory add files: 
     - `hamburger/Hamburger.tsx`
     - `hamburger/Hamburger.scss`
-    - `mm-connect/atoms/MyButton.tsx`
+    - `mm-connect/atoms/Button.tsx`
     - `mm-connect/atoms/MyLink.tsx`
     - `mm-connect/molecules/ConnectMetaMask.tsx`
     - `mm-connect/molecules/ConnectNetwork.tsx`

@@ -1,4 +1,4 @@
-import MyButton from '../atoms/MyButton'
+import Button from '../atoms/Button'
 import { useState } from 'react'
 
 const GetPermissions = () => {
@@ -29,12 +29,12 @@ const GetPermissions = () => {
 
   return (
     <>
-      <MyButton handleClick={requestPermissions}>
+      <Button handleClick={requestPermissions}>
         <p>Request Permissions</p>
-      </MyButton>
-      <MyButton handleClick={getPermissions}>
+      </Button>
+      <Button handleClick={getPermissions}>
         <p>Get Accounts</p>
-      </MyButton>
+      </Button>
       <div>caveats.value: 
         { permissionRequested ?
           permissions.caveats[0].value.map(account => <div key={account}>{account}</div>)

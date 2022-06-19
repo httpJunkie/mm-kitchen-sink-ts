@@ -1,11 +1,25 @@
-import React from 'react'
+import { useContext } from 'react'
+import { ViewContext } from '../context/ViewContext'
+
+import DisplayAddress from '../ui-components/metamask//connect/DisplayAddress'
+import ConnectMetaMask from '../ui-components/metamask//connect/ConnectMetaMask'
+import InstallMetaMask from '../ui-components/metamask//connect/InstallMetaMask'
+import ConnectNetwork from '../ui-components/metamask//connect/ConnectNetwork'
 
 const Logo = () => {
+  const { user, chainId, actions, provider } = useContext(ViewContext)
+  const { address } = user
+
   return (
     <div className={`logo`}>
-      <span style={
-        { marginTop: '-2px', transform:'rotate(-90deg)' }
-      }></span> <span>MM Kitchen Sink</span>
+      {address && chainId && chainId === 4
+        ? <DisplayAddress />
+        : address && chainId && chainId !== 4
+          ? <ConnectNetwork />
+          : provider
+            ? <ConnectMetaMask connect={actions.connect} />
+            : <InstallMetaMask />
+      }
     </div>
   )
 }

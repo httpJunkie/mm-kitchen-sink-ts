@@ -1,4 +1,4 @@
-import MyButton from '../atoms/MyButton'
+import Button from '../atoms/Button'
 import { useState } from 'react'
 
 const GetAccount = () => {
@@ -20,9 +20,9 @@ const GetAccount = () => {
 
   return (
     <>
-      <MyButton handleClick={getAccounts}>
+      <Button handleClick={getAccounts}>
         <p>Get Account</p>
-      </MyButton>
+      </Button>
       <span>{account}</span>
     </>
   )

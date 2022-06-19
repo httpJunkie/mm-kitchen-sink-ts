@@ -1,6 +1,6 @@
 import { useContext } from 'react'
-import { ViewContext } from '../../../context/ViewProvider'
-import MyButton from '../atoms/MyButton'
+import { ViewContext } from '../../../context/ViewContext'
+import Button from '../../Button'
 
 const ConnectNetwork = () => {
   const { provider } = useContext(ViewContext)
@@ -40,9 +40,9 @@ const ConnectNetwork = () => {
   }
 
   return (
-    <MyButton handleClick={addSwitchNetwork}>
-      <p>Connect Rinkeby</p>
-    </MyButton>
+    <Button handleClick={addSwitchNetwork}>
+      <div className="text">Connect Rinkeby</div>
+    </Button>
   )
 }
 
