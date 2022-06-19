@@ -14,7 +14,7 @@ const Foot = () => {
   return (
     <>
       <div className="left">
-        🦊 Be Foxy {context.themeMode}
+        🦊 Be Foxy
       </div>
       <div className="right">
         <Switcher onChange={handleSwitch} />
