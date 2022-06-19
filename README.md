@@ -1,6 +1,18 @@
 #Steps to get this app working
 
-After install of CRA, remove `App.tsx`, `App.css`, and `index.css` from the root directory.
+Install Dependencies
+```npm install```
+
+
+Run Project in Dev Mode
+```npm run dev```   
+
+Browser to https://localhost:3000
+
+
+#Steps to build this app
+
+After install of NextJS, remove `App.tsx`, `App.css`, and `index.css` from the root directory.
 
 1. run `npm i ethers simple-flexbox normalize.css sass react-media-hook ethers @metamask/detect-provider @metamask/onboarding use-immer`
 1. Add `context`, `partial-components`, `reducers`, `view-component` and `ui-components`,  and `context` directories
