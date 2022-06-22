@@ -1,4 +1,4 @@
-const Switcher = ({ onChange }) => {
+const Toggle = ({ onChange }) => {
   return (
     <div>
       <label className="ui-switch">
@@ -10,4 +10,4 @@ const Switcher = ({ onChange }) => {
   )
 }
 
-export default Switcher
+export default Toggle

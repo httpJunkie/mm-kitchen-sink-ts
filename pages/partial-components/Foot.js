@@ -1,7 +1,7 @@
 import { useContext } from 'react'
 import { AppContext } from '../context/AppContext'
 
-import Switcher from '../ui-components/switcher/Switcher'
+import Toggle from '../ui-components/toggle/Toggle'
 
 const Foot = () => {
   const context = useContext(AppContext)
@@ -17,7 +17,7 @@ const Foot = () => {
         🦊 Be Foxy
       </div>
       <div className="right">
-        <Switcher onChange={handleSwitch} />
+        <Toggle onChange={handleSwitch} />
       </div>
     </>
   )
