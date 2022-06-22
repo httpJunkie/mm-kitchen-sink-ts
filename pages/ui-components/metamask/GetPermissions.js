@@ -30,10 +30,10 @@ const GetPermissions = () => {
   return (
     <>
       <Button handleClick={requestPermissions}>
-        <p>Request Permissions</p>
+        Request Permissions
       </Button>
       <Button handleClick={getPermissions}>
-        <p>Get Accounts</p>
+        Get Accounts
       </Button>
       <div>caveats.value: 
         { permissionRequested ?

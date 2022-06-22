@@ -21,7 +21,7 @@ const GetAccount = () => {
   return (
     <>
       <Button handleClick={getAccounts}>
-        <p>Get Account</p>
+        Get Account
       </Button>
       <span>{account}</span>
     </>
