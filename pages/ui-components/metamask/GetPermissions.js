@@ -37,7 +37,13 @@ const GetPermissions = () => {
       </Button>
       <div>caveats.value: 
         { permissionRequested ?
-          permissions.caveats[0].value.map(account => <div key={account}>{account}</div>)
+          permissions.caveats[0].value.map(
+              (account) => {
+                return (
+                  <div key={account}>{account}</div>
+                )
+              }
+            )
           : null
         }
       </div>
