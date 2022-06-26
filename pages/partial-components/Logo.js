@@ -1,7 +1,7 @@
 import { useContext } from 'react'
 import { ViewContext } from '../context/ViewContext'
 
-import DisplayAddress from '../ui-components/metamask//connect/DisplayAddress'
+import DisplayAccount from '../ui-components/metamask/connect/DisplayAccount'
 import ConnectMetaMask from '../ui-components/metamask//connect/ConnectMetaMask'
 import InstallMetaMask from '../ui-components/metamask//connect/InstallMetaMask'
 import ConnectNetwork from '../ui-components/metamask//connect/ConnectNetwork'
@@ -13,7 +13,7 @@ const Logo = () => {
   return (
     <div className={`logo`}>
       {address && chainId && chainId === 4
-        ? <DisplayAddress />
+        ? <DisplayAccount />
         : address && chainId && chainId !== 4
           ? <ConnectNetwork />
           : provider

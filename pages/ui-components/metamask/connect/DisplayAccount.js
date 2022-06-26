@@ -16,18 +16,26 @@ import { ViewContext } from '../../../context/ViewContext'
 //   }
 // `
 
-const DisplayAddress = () => {
+const DisplayAccount = () => {
   const { user } = useContext(ViewContext)
   const { address } = user
+
   const formatAddress = (addr) => {
     return `${addr.substr(0, 6)}...${addr.substr(-4)}`
   }
 
   return (
     <div className="display">
-      <span className="text">{formatAddress(address)}</span>
+      <a 
+        className="address tooltip-right" 
+        href={`https://etherscan.io/address/${address}`} 
+        target="_blank"
+        data-tooltip="Open in Etherscan"
+      >
+        {formatAddress(address)}
+      </a>
     </div>
   )
 }
 
-export default DisplayAddress
+export default DisplayAccount
