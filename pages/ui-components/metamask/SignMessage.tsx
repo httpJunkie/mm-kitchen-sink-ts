@@ -1,8 +1,16 @@
 import { useState } from 'react'
-import Button from '../ui-components/Button'
+import Button from '../Button'
 import { ethers } from 'ethers'
 
-const SignMessage = ({ message, address }) => {
+import { MetaMaskInpageProvider } from "@metamask/providers";
+
+declare global {
+  interface Window{
+    ethereum?:MetaMaskInpageProvider
+  }
+}
+
+const SignMessage = ({ message, address }: any) => {
   const [isSignError, setIsSignError] = useState(false)
   const [signError, setSignError] = useState("")
   const [isSignSuccess, setIsSignSuccess] = useState(false)
@@ -10,7 +18,7 @@ const SignMessage = ({ message, address }) => {
   const [verifyMessage, setVerifyMessage] = useState("")
   const [verifyErrorMessage, setVerifyErrorMessage] = useState("")
 
-  const handleVerifyMessage = async ({ message, address }) => {
+  const handleVerifyMessage = async ({ message, address }: any) => {
     try {
       const signerAddress = await ethers.utils.verifyMessage(message, signedSuccess)
 
@@ -39,12 +47,12 @@ const SignMessage = ({ message, address }) => {
         method: 'personal_sign',
         params: [message, address]
       })
-      .then(res => {
+      .then((res: any) => {
         setIsSignError(false)
         setIsSignSuccess(true)
         setSignedSuccess(res)
       })
-      .catch(err => {
+      .catch((err: any) => {
         setIsSignSuccess(false)
         setIsSignError(true)
         setSignError(err.message)
