@@ -5,13 +5,14 @@ import { ViewContext } from './context/ViewContext'
 import SignMessage from './ui-components/metamask/SignMessage'
 
 const Signing: NextPage = () => {
-  const { user } = useContext(ViewContext)
+  const { user, provider } = useContext(ViewContext)
   const { address } = user
   const message = "I agree to the terms and services at:\nhttps://metamask.com/tos"
 
   const signMessageProps = {
     message: message,
-    address: address.toString()
+    address: address.toString(),
+    provider: provider
   }
 
   return (

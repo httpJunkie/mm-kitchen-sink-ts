@@ -1,5 +1,5 @@
-import Button from '../atoms/Button'
 import { useState } from 'react'
+import Button from '../Button'
 
 const GetAccount = () => {
   const [account, setAccount] = useState()

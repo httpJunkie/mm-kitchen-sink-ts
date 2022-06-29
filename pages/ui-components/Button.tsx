@@ -6,7 +6,9 @@ const Button = ({
 }: any) => {
   return (
     <button
-      className={`mm-button btn-rounded ${marginBottom ? 'btn-marginBottom' : null} ${marginTop ? 'btn-marginTop' : null}`} onClick={handleClick}>
+      className={`mm-button btn-rounded ${marginBottom ? 'btn-marginBottom' : marginTop ? 'btn-marginTop' : ''}`} 
+      onClick={handleClick}
+    >
       {children}
     </button>
   )

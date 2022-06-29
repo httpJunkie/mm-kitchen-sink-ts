@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import Button from '../Button'
 import { ethers } from 'ethers'
+import Button from '../Button'
 
 import { MetaMaskInpageProvider } from "@metamask/providers";
 
@@ -10,7 +10,7 @@ declare global {
   }
 }
 
-const SignMessage = ({ message, address }: any) => {
+const SignMessage = ({ message, address, provider }: any) => {
   const [isSignError, setIsSignError] = useState(false)
   const [signError, setSignError] = useState("")
   const [isSignSuccess, setIsSignSuccess] = useState(false)
@@ -43,10 +43,7 @@ const SignMessage = ({ message, address }: any) => {
 
   const signMessage = async () => {
       // await signer.signMessage("I agree to the terms and services at:\nhttps://metamask.com/tos")
-      await window.ethereum.request({
-        method: 'personal_sign',
-        params: [message, address]
-      })
+      await provider.send('personal_sign', [message, address])
       .then((res: any) => {
         setIsSignError(false)
         setIsSignSuccess(true)
