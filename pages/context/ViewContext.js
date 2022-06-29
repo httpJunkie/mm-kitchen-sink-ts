@@ -65,7 +65,7 @@ export const ViewProvider = ({ children }) => {
   }, [setAccount, dispatch])
 
   useEffect(() => {
-    if (window.ethereum) {
+    if (typeof window.ethereum !== undefined) {
       connectUser()
       window.ethereum.on('accountsChanged', () => {
         connectUser()
@@ -81,7 +81,8 @@ export const ViewProvider = ({ children }) => {
 
   const { 
     // foxcon2022, 
-    isConnected, signer, name, chainId, provider, user } = state
+    isConnected, signer, name, chainId, provider, user 
+  } = state
 
   const connect = async () => {
     try {
