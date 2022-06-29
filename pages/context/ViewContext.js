@@ -11,6 +11,7 @@ export const ViewContext = createContext(initialState)
 
 // Get ETH as small number ("0.01" => "10000000000000000")
 export const bigNumberify = (amt) => ethers.utils.parseEther(amt)
+
 // Get ETH as small number ("10000000000000000" => "0.01")
 export const smolNumberify = (amt, decimals = 18) => 
   parseFloat(ethers.utils.formatUnits(amt, decimals))
@@ -35,28 +36,31 @@ export const ViewProvider = ({ children }) => {
   }, [dispatch])
 
   const connectUser = useCallback(async () => {
-    try {
-      const provider = new ethers.providers.Web3Provider(window.ethereum)
-      if (provider) {
-        const signer = await provider.getSigner()
-        const { name, chainId } = await provider.getNetwork()
-        // const foxcon2022 = new ethers.Contract(foxcon2022Address, foxcon2022Abi.abi, signer)
-        const accounts = await window.ethereum.request({ method: 'eth_accounts' })
-        setAccount(accounts)
-        dispatch({
-          type: 'CONNECTED_PROVIDER',
-          payload: {
-            provider,
-            signer,
-            chainId,
-            name
-            // ,
-            // foxcon2022
-          }
-        })
+    if (typeof window.ethereum !== undefined) {
+      try {
+        const provider = new ethers.providers.Web3Provider(window.ethereum)
+        if (provider) {
+          const signer = await provider.getSigner()
+          const { name, chainId } = await provider.getNetwork()
+          // const foxcon2022 = new ethers.Contract(foxcon2022Address, foxcon2022Abi.abi, signer)
+          const accounts = await provider.send('eth_accounts')
+          // const accounts = await window.ethereum.request({ method: 'eth_accounts' })
+          setAccount(accounts)
+          dispatch({
+            type: 'CONNECTED_PROVIDER',
+            payload: {
+              provider,
+              signer,
+              chainId,
+              name
+              // ,
+              // foxcon2022
+            }
+          })
+        }
+      } catch (e) {
+        console.error(e)
       }
-    } catch (e) {
-      console.error(e)
     }
   }, [setAccount, dispatch])
 
@@ -81,7 +85,7 @@ export const ViewProvider = ({ children }) => {
 
   const connect = async () => {
     try {
-      const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' })
+      const accounts = await provider.send('eth_requestAccounts', [])
       setAccount(accounts)
     } catch (e) {
       console.error(e)
