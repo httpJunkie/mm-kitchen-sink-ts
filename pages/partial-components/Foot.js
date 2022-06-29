@@ -14,7 +14,7 @@ const Foot = () => {
   return (
     <>
       <div className="left">
-        🦊 Be Foxy
+        🦊 <a className="text_link" href="https://twitter.com/httpJunkie/status/1479322790654189569" target="_blank">Stay Foxy</a>
       </div>
       <div className="right">
         <Toggle onChange={handleSwitch} />

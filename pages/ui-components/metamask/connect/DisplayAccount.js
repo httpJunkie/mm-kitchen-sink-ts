@@ -27,7 +27,7 @@ const DisplayAccount = () => {
   return (
     <div className="display">
       <a 
-        className="address tooltip-right" 
+        className="text_link tooltip-right" 
         href={`https://etherscan.io/address/${address}`} 
         target="_blank"
         data-tooltip="Open in Etherscan"
