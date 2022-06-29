@@ -81,7 +81,7 @@ export const ViewProvider = ({ children }) => {
 
   const { 
     // foxcon2022, 
-    isConnected, signer, name, chainId, provider, user 
+    isConnected, provider, signer, user, name, chainId 
   } = state
 
   const connect = async () => {
