@@ -18,7 +18,10 @@ const Signing: NextPage = () => {
   return (
     <>
       <div>
-        <SignMessage {...signMessageProps} />
+        {!address
+          ? <div>Not Connected to Ethereum</div> 
+          : <SignMessage {...signMessageProps} />
+        }
       </div>
     </>
   )

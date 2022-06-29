@@ -71,13 +71,13 @@ const SignMessage = ({ message, address, provider }: any) => {
   return (
     <>
       <Button handleClick={signMessage}>
-        Sign Message
+        <div className="text">Sign Message</div>
       </Button>
-      { isSignError && {signError} }
+      { isSignError && <div>{signError}</div> }
       { isSignSuccess && <span>Successful Sign</span>}
       { isSignSuccess && 
         <Button marginTop={true} handleClick={handleVerification}>
-          Verify Message
+          <div className="text">Verify Message</div>
         </Button>
       }
       { verifyMessage !== "" ? verifyMessage : verifyErrorMessage  }
