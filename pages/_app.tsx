@@ -1,11 +1,13 @@
 import 'normalize.css'
 import '../styles/Button.scss'
 import '../styles/DisplayAccount.scss'
+import '../styles/ErrorMessage.scss'
 import '../styles/globals.scss'
 import '../styles/Hamburger.scss'
 import '../styles/Link.scss'
 import '../styles/Logo.scss'
 import '../styles/Sidenav.scss'
+import '../styles/SuccessMessage.scss'
 import '../styles/Toggle.scss'
 import '../styles/Topnav.scss'
 

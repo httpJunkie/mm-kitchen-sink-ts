@@ -4,8 +4,7 @@ const SuccessMessage: React.FC<{message:string}> = ({ message }) => {
   return (
     <div className="alert alert-success">
       <div>
-        success:
-        <label>{message}</label>
+        ✔️ <label>{message}</label>
       </div>
     </div>
   );
