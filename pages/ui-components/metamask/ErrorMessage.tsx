@@ -1,4 +1,4 @@
- const ErrorMessage: React.FC<{message:string}> = ({ message }) => {
+ const ErrorMessage: React.FC<{ message:string }> = ({ message }) => {
   if (!message) return null;
 
   return (

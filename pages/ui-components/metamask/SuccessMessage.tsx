@@ -1,4 +1,4 @@
-const SuccessMessage: React.FC<{message:string}> = ({ message }) => {
+const SuccessMessage: React.FC<{ message: string }> = ({ message }) => {
   if (!message) return null;
 
   return (

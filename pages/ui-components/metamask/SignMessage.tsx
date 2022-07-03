@@ -2,9 +2,8 @@ import { useState, useRef } from "react"
 import { ethers } from "ethers"
 import ErrorMessage from "./ErrorMessage"
 
-const signMessage = async ({ setError, message }) => {
+const signMessage = async ({ setError, message }): Promise<any> => {
   try {
-    console.log({ message })
     if (!window.ethereum)
       throw new Error("No crypto wallet found. Please install it.")
 
@@ -19,20 +18,23 @@ const signMessage = async ({ setError, message }) => {
       signature,
       address
     }
-  } catch (err) {
+  } catch (err:any) {
     setError(err.message)
   }
 }
 
 export default function SignMessage() {
   const resultBox = useRef()
-  const [signatures, setSignatures] = useState([])
-  const [error, setError] = useState()
+  const [signatures, setSignatures] = useState<any[]>([])
+  const [error, setError] = useState<string>("")
 
-  const handleSign = async (e) => {
-    e.preventDefault()
-    const data = new FormData(e.target)
+  const handleSign = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
+
+    const data = new FormData(event.target)
+    console.log(`ERROR: ${error}`)
     setError()
+    console.log(`ERROR: ${error}`)
     const sig = await signMessage({
       setError,
       message: data.get("message")
@@ -48,7 +50,7 @@ export default function SignMessage() {
         <div>
           <h1>Sign messages</h1>
           <div>
-              <textarea required type="text" name="message" placeholder="Message" />
+            <textarea required type="text" name="message" placeholder="Message" />
           </div>
         </div>
         <div>
@@ -57,7 +59,7 @@ export default function SignMessage() {
         </div>
         {signatures.map((sig, idx) => {
           return (
-            <div key={sig}>
+            <div key={`${sig}-${idx}`}>
               <p>Message {idx + 1}: {sig.message}</p>
               <p>Signer: {sig.address}</p>
               <textarea readOnly type="text" ref={resultBox} placeholder="Generated signature"

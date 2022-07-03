@@ -10,25 +10,19 @@ const Signing: NextPage = () => {
   const { address } = user
   const message = 'I agree to the terms and services at:\nhttps://metamask.com/tos'
 
-  const signMessageProps = {
-    message: message,
-    address: address.toString(),
-    provider: provider
-  }
-
   return (
     <>
       <div>
         {!address
           ? <div>Not Connected to Ethereum</div> 
-          : <div className="flex flex-wrap">
-          <div className="w-full lg:w-1/2">
-            <SignMessage />
-          </div>
-          <div className="w-full lg:w-1/2">
-            <VerifyMessage />
-          </div>
-        </div>
+          : <div>
+              <div>
+                <SignMessage />
+              </div>
+              <div>
+                <VerifyMessage />
+              </div>
+            </div>
         }
       </div>
     </>

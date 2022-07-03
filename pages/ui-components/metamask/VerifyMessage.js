@@ -21,8 +21,8 @@ export default function VerifyMessage() {
   const [error, setError] = useState()
   const [successMsg, setSuccessMsg] = useState()
 
-  const handleVerification = async (e) => {
-    e.preventDefault()
+  const handleVerification = async (event) => {
+    event.preventDefault()
     const data = new FormData(e.target)
     setSuccessMsg()
     setError()
