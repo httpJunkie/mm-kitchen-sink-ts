@@ -10,7 +10,7 @@ const GetPermissions = () => {
   const [permissionRequested, setPermissionRequested] = useState(false)
 
   const requestPermissions = async () => {
-    await provider.send(
+    await provider.request(
       'wallet_requestPermissions',
       [
         {
@@ -22,7 +22,7 @@ const GetPermissions = () => {
   }
 
   const getPermissions = async () => {
-    await provider.send('wallet_getPermissions')
+    await provider.request('wallet_getPermissions', [])
       .then((res: any) => setPermissions(res[0]))
   }
 

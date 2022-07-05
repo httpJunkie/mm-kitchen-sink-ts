@@ -12,7 +12,7 @@ const GetChain = () => {
   const getChainId = async () => {
     if (provider) {
       try {
-        const chain = await provider.send('eth_chainId')
+        const chain = await provider.request('eth_chainId', [])
         setChainId(chain)
       } catch (err: any) {
         setError(err.message)

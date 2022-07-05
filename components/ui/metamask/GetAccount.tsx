@@ -11,7 +11,7 @@ const GetAccount = () => {
   const getAccounts = async() => {
     if (provider) {
       try {
-        await provider.send('eth_accounts')
+        await provider.request('eth_accounts', [])
         .then((res: any) => {
           setAccount(res)
           console.log(res)

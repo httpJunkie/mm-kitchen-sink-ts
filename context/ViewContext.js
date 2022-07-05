@@ -43,8 +43,7 @@ export const ViewProvider = ({ children }) => {
           const signer = await provider.getSigner()
           const { name, chainId } = await provider.getNetwork()
           // const foxcon2022 = new ethers.Contract(foxcon2022Address, foxcon2022Abi.abi, signer)
-          const accounts = await provider.send('eth_accounts')
-          // const accounts = await window.ethereum.request({ method: 'eth_accounts' })
+          const accounts = await window.ethereum.request({ method: 'eth_accounts' })
           setAccount(accounts)
           dispatch({
             type: 'CONNECTED_PROVIDER',
@@ -86,7 +85,7 @@ export const ViewProvider = ({ children }) => {
 
   const connect = async () => {
     try {
-      const accounts = await provider.send('eth_requestAccounts', [])
+      const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' })
       setAccount(accounts)
     } catch (e) {
       console.error(e)

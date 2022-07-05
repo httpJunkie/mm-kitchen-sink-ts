@@ -1,6 +1,5 @@
 import { useContext } from 'react'
 import { ViewContext } from '../../../../context/ViewContext'
-import { ethers } from "ethers"
 
 import Button from '../../Button'
 
@@ -10,13 +9,13 @@ const ConnectNetwork = () => {
   const addSwitchNetwork = async () => {
     if (provider) {
       try {
-        await provider.send(
+        await provider.request(
           'wallet_switchEthereumChain',
           [{ chainId: '0x4' }]
         )
       } catch (error) {
         try {
-          await provider.send(
+          await provider.request(
             'wallet_addEthereumChain',
             [
               {
