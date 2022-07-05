@@ -1,5 +1,5 @@
 import { useContext } from 'react'
-import { ViewContext } from '../../../context/ViewContext'
+import { ViewContext } from '../../../../pages/context/ViewContext'
 
 const DisplayAccount = () => {
   const { user } = useContext(ViewContext)

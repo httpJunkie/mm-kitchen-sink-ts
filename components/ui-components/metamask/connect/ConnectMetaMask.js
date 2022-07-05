@@ -1,4 +1,4 @@
-import Logo from '../../../assets/metamask.svg'
+import Logo from '../../../../pages/assets/metamask.svg'
 import Button from '../../Button'
 
 const ConnectMetaMask = ({ connect }) => {

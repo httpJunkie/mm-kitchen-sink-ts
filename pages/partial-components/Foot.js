@@ -1,7 +1,7 @@
 import { useContext } from 'react'
 import { AppContext } from '../context/AppContext'
 
-import Toggle from '../ui-components/toggle/Toggle'
+import Toggle from '../../components/ui-components/toggle/Toggle'
 
 const Foot = () => {
   const context = useContext(AppContext)

@@ -23,7 +23,7 @@ export default function VerifyMessage() {
 
   const handleVerification = async (event) => {
     event.preventDefault()
-    const data = new FormData(e.target)
+    const data = new FormData(event.target)
     setSuccessMsg()
     setError()
     const isValid = await verifyMessage({

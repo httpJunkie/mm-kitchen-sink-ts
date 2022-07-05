@@ -2,7 +2,7 @@ import { useContext } from 'react'
 import { AppContext } from '../context/AppContext'
 import Link from 'next/link'
 
-import Hamburger from '../ui-components/hamburger/Hamburger'
+import Hamburger from '../../components/ui-components/hamburger/Hamburger'
 
 
 const RouterLinks = (routes: any) =>

@@ -1,10 +1,10 @@
 import { useContext } from 'react'
 import { ViewContext } from '../context/ViewContext'
 
-import DisplayAccount from '../ui-components/metamask/connect/DisplayAccount'
-import ConnectMetaMask from '../ui-components/metamask//connect/ConnectMetaMask'
-import InstallMetaMask from '../ui-components/metamask//connect/InstallMetaMask'
-import ConnectNetwork from '../ui-components/metamask//connect/ConnectNetwork'
+import DisplayAccount from '../../components/ui-components/metamask/connect/DisplayAccount'
+import ConnectMetaMask from '../../components/ui-components/metamask/connect/ConnectMetaMask'
+import InstallMetaMask from '../../components/ui-components/metamask/connect/InstallMetaMask'
+import ConnectNetwork from '../../components/ui-components/metamask/connect/ConnectNetwork'
 
 const Logo = () => {
   const { user, chainId, actions, provider } = useContext(ViewContext)
