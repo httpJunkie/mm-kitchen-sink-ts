@@ -5,9 +5,8 @@ import { ViewContext } from '../context/ViewContext'
 import GetChain from '../components/ui/metamask/GetChain'
 
 const Signing: NextPage = () => {
-  const { user, provider } = useContext(ViewContext)
+  const { user } = useContext(ViewContext)
   const { address } = user
-  const message = 'I agree to the terms and services at:\nhttps://metamask.com/tos'
 
   return (
     <>
@@ -15,9 +14,7 @@ const Signing: NextPage = () => {
         {!address
           ? <div>Not Connected to Ethereum</div> 
           : <div>
-              <div>
-                <GetChain />
-              </div>
+              <GetChain />
             </div>
         }
       </div>

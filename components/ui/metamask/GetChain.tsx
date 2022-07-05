@@ -4,7 +4,7 @@ import { ViewContext } from '../../../context/ViewContext'
 import Button from '../Button'
 
 const GetChain = () => {
-  const { user, provider, chain }: any = useContext(ViewContext)
+  const { user, provider }: any = useContext(ViewContext)
   const { address } = user
   const [chainId, setChainId] = useState<string>("")
   const [error, setError] = useState<string>("")

@@ -11,6 +11,7 @@ const RouterLinks = (routes: any) =>
       { name: "Home", href: "/" },
       { name: "Signing", href: "/signing" },
       { name: "Chain", href: "/chain" },
+      { name: "Accounts", href: "/accounts" },
     ].map((route, idx) => {
       return (
         <li className="link" key={`${route.name}-${idx}`}>
