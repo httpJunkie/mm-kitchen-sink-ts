@@ -1,13 +1,13 @@
 import { useContext } from 'react'
 import Head from 'next/head'
-import { ViewContext } from '../context/ViewContext'
-import { AppContext } from '../context/AppContext'
+import { ViewContext } from '../../context/ViewContext'
+import { AppContext } from '../../context/AppContext'
 // import { useMediaPredicate } from 'react-media-hook'
 
-import Logo from '../partial-components/Logo'
-import Sidenav from '../partial-components/Sidenav'
-import Topnav from '../partial-components/Topnav'
-import Foot from '../partial-components/Foot'
+import Logo from './Logo'
+import Sidenav from './Sidenav'
+import Topnav from './Topnav'
+import Foot from './Foot'
 
 const Layout = ({ children }) => {
   const { user } = useContext(ViewContext)

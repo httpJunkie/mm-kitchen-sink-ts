@@ -1,9 +1,9 @@
 import type { NextPage } from 'next'
 import { useContext } from 'react'
-import { ViewContext } from './context/ViewContext'
+import { ViewContext } from '../context/ViewContext'
 
-import SignMessage from '../components/ui-components/metamask/SignMessage'
-import VerifyMessage from '../components/ui-components/metamask/VerifyMessage'
+import SignMessage from '../components/ui/metamask/SignMessage'
+import VerifyMessage from '../components/ui/metamask/VerifyMessage'
 
 const Signing: NextPage = () => {
   const { user, provider } = useContext(ViewContext)

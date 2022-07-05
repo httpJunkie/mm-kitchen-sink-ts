@@ -1,8 +1,8 @@
 import type { NextPage } from 'next'
 import { useContext, useEffect } from 'react'
 import { useMediaPredicate } from 'react-media-hook'
-import { AppContext } from './context/AppContext'
-import { ViewContext } from './context/ViewContext'
+import { AppContext } from '../context/AppContext'
+import { ViewContext } from '../context/ViewContext'
 
 import { SiEthereum } from 'react-icons/si';
 
@@ -20,9 +20,10 @@ const Home: NextPage = () => {
 
   return (
     <div className="home">
-      {!address
-        ? <div>Not Connected to Ethereum</div> 
-        : <SiEthereum size="40" />
+      { 
+        !address
+          ? <div>Not Connected to Ethereum</div> 
+          : <SiEthereum size="40" />
       }
     </div>
   )

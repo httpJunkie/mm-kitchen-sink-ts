@@ -12,10 +12,10 @@ import '../styles/Toggle.scss'
 import '../styles/Topnav.scss'
 
 import type { AppProps } from 'next/app'
-import { ViewProvider } from './context/ViewContext'
-import { AppProvider } from './context/AppContext'
+import { ViewProvider } from '../context/ViewContext'
+import { AppProvider } from '../context/AppContext'
 
-import Layout from './layout'
+import Layout from '../components/layout/Layout'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
