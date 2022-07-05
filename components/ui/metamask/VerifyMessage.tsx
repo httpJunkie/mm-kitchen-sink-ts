@@ -3,10 +3,16 @@ import { ethers } from "ethers"
 import ErrorMessage from "./ErrorMessage"
 import SuccessMessage from "./SuccessMessage"
 
-const verifyMessage = async ({ message, address, signature }) => {
+interface Message {
+  message: string;
+  address: string;
+  signature: string;
+}
+
+const verifyMessage = async(message: Message) => {
   try {
-    const signerAddr = await ethers.utils.verifyMessage(message, signature)
-    if (signerAddr !== address) {
+    const signerAddr = await ethers.utils.verifyMessage(message.message, message.signature)
+    if (signerAddr !== message.address) {
       return false
     }
 
@@ -18,16 +24,15 @@ const verifyMessage = async ({ message, address, signature }) => {
 }
 
 export default function VerifyMessage() {
-  const [error, setError] = useState()
-  const [successMsg, setSuccessMsg] = useState()
+  const [error, setError] = useState<string>("")
+  const [successMsg, setSuccessMsg] = useState<string>("")
 
-  const handleVerification = async (event) => {
+  const handleVerification = async (event: any) => {
     event.preventDefault()
     const data = new FormData(event.target)
-    setSuccessMsg()
-    setError()
+    setSuccessMsg("")
+    setError("")
     const isValid = await verifyMessage({
-      setError,
       message: data.get("message"),
       address: data.get("address"),
       signature: data.get("signature")

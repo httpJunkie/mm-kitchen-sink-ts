@@ -12,7 +12,7 @@ const GetChain = () => {
   const getChainId = async () => {
     if (provider) {
       try {
-        const chain = await provider.request('eth_chainId', [])
+        const chain = await window.ethereum.request({method: 'eth_chainId', params: []})
         setChainId(chain)
       } catch (err: any) {
         setError(err.message)
