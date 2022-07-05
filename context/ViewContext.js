@@ -1,5 +1,5 @@
 import { createContext, useEffect, useCallback } from 'react'
-import { initialState } from './initialState.js'
+import { initialState } from './initialState'
 import { reducer } from './reducers/index'
 
 import { useImmerReducer } from 'use-immer'

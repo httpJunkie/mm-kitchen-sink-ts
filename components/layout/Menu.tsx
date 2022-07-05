@@ -9,7 +9,8 @@ const RouterLinks = (routes: any) =>
   <>
     {[
       { name: "Home", href: "/" },
-      { name: "Signing", href: "/signing" }
+      { name: "Signing", href: "/signing" },
+      { name: "Chain", href: "/chain" },
     ].map((route, idx) => {
       return (
         <li className="link" key={`${route.name}-${idx}`}>
@@ -32,7 +33,7 @@ const Menu = () => {
     <ul style={{ userSelect: 'none' }}>
       <RouterLinks />
       <li className='link'>
-        <a className='text_link' tabIndex={4} href='https://github.com/httpJunkie/mm-kitchen-sink'>
+        <a className='text_link' tabIndex={4} href='https://github.com/httpJunkie/mm-kitchen-sink-ts'>
           Source Code
         </a>
       </li>

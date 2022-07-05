@@ -1,5 +1,6 @@
 import 'normalize.css'
 import '../styles/Button.scss'
+import '../styles/Chain.scss'
 import '../styles/DisplayAccount.scss'
 import '../styles/ErrorMessage.scss'
 import '../styles/globals.scss'
