@@ -1,4 +1,4 @@
-const Hamburger = ({ onClick }) => {
+const Hamburger = ({ onClick }: any) => {
   return (
     <div className="hamburger-menu">
       <input type="checkbox" className="input-check2" id="input-check2" 

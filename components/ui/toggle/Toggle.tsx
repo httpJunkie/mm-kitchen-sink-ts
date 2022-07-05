@@ -1,4 +1,4 @@
-const Toggle = ({ onChange }) => {
+const Toggle = ({ onChange }: any) => {
   return (
     <div>
       <label className="ui-switch">

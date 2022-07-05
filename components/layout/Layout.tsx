@@ -9,7 +9,7 @@ import Sidenav from './Sidenav'
 import Topnav from './Topnav'
 import Foot from './Foot'
 
-const Layout = ({ children }) => {
+const Layout = ({ children }: any) => {
   const { user } = useContext(ViewContext)
   // const { address } = user
   const context = useContext(AppContext)
