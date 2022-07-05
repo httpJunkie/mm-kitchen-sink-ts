@@ -3,7 +3,7 @@ import { ViewContext } from '../../../context/ViewContext'
 
 import Button from '../Button'
 
-const Chain = () => {
+const GetChain = () => {
   const { user, provider, chain }: any = useContext(ViewContext)
   const { address } = user
   const [chainId, setChainId] = useState<string>("")
@@ -41,4 +41,4 @@ const Chain = () => {
   )
 }
 
-export default Chain
+export default GetChain

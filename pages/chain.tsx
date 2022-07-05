@@ -2,7 +2,7 @@ import type { NextPage } from 'next'
 import { useContext } from 'react'
 import { ViewContext } from '../context/ViewContext'
 
-import Chain from '../components/ui/metamask/Chain'
+import GetChain from '../components/ui/metamask/GetChain'
 
 const Signing: NextPage = () => {
   const { user, provider } = useContext(ViewContext)
@@ -16,7 +16,7 @@ const Signing: NextPage = () => {
           ? <div>Not Connected to Ethereum</div> 
           : <div>
               <div>
-                <Chain />
+                <GetChain />
               </div>
             </div>
         }
