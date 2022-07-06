@@ -10,19 +10,15 @@ const GetPermissions = () => {
   const [permissionRequested, setPermissionRequested] = useState(false)
 
   const requestPermissions = async () => {
-    await provider.request(
-      'wallet_requestPermissions',
-      [
-        {
-          "eth_accounts": {}
-        }
-      ]
-    )
+    await window.ethereum.request({
+      method: 'wallet_requestPermissions',
+      params: [{ "eth_accounts": {} }]
+    })
       .then(() => setPermissionRequested(true))
   }
 
   const getPermissions = async () => {
-    await provider.request('wallet_getPermissions', [])
+    await window.ethereum.request({ method: 'wallet_getPermissions', params: [] })
       .then((res: any) => setPermissions(res[0]))
   }
 

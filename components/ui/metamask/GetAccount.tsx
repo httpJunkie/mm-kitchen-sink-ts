@@ -11,7 +11,7 @@ const GetAccount = () => {
   const getAccounts = async() => {
     if (provider) {
       try {
-        await provider.request('eth_accounts', [])
+        await window.ethereum.request({ method: 'eth_accounts', params: [] })
         .then((res: any) => {
           setAccount(res)
           console.log(res)
