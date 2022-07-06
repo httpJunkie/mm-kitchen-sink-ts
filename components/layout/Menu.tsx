@@ -1,6 +1,7 @@
 import { useContext } from 'react'
 import { AppContext } from '../../context/AppContext'
 import Link from 'next/link'
+import { SiGithub } from 'react-icons/si'
 
 import Hamburger from '../ui/hamburger/Hamburger'
 
@@ -35,7 +36,7 @@ const Menu = () => {
       <RouterLinks />
       <li className='link'>
         <a className='text_link' tabIndex={4} href='https://github.com/httpJunkie/mm-kitchen-sink-ts'>
-          Source Code
+          &nbsp;<SiGithub size="16" /> Source
         </a>
       </li>
       <li className='menu'>
