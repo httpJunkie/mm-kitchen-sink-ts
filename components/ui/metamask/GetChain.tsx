@@ -30,10 +30,10 @@ const GetChain = () => {
       }
       <div className="result">
         <div>
-          <strong>ChainId Number:</strong> {chainId && chainId}
+          <strong>Returned Hex Value: </strong> {chainId && parseInt(chainId)}
         </div>
         <div>
-          <strong>ChainId Hex:</strong> {chainId && parseInt(chainId)}
+          <strong>Converted to Number:</strong> {chainId && chainId}
         </div>
       </div>
       
