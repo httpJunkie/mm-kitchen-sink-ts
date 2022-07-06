@@ -1,12 +1,18 @@
-const SuccessMessage: React.FC<{ message: string }> = ({ message }) => {
-  if (!message) return null;
+import { AiFillCheckCircle } from "react-icons/ai"
+
+interface SuccessMessageProps {
+  message: string
+}
+
+const SuccessMessage = ({ message }: SuccessMessageProps) => {
+  if (!message) return null
 
   return (
     <div className="alert alert-success">
       <div>
-        ✔️ <label>{message}</label>
+        <AiFillCheckCircle /> <label>{message}</label>
       </div>
     </div>
-  );
+  )
 }
 export default SuccessMessage

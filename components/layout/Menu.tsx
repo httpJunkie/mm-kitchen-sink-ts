@@ -1,6 +1,6 @@
+import Link from 'next/link'
 import { useContext } from 'react'
 import { AppContext } from '../../context/AppContext'
-import Link from 'next/link'
 import { SiGithub } from 'react-icons/si'
 
 import Hamburger from '../ui/hamburger/Hamburger'
