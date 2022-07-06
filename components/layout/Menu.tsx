@@ -44,7 +44,7 @@ const Menu = () => {
       <RouterLinks routes={myAppRoutes} />
       <li className='link'>
         <a className='text_link' tabIndex={4} href='https://github.com/httpJunkie/mm-kitchen-sink-ts'>
-          &nbsp;<SiGithub size="16" /> Source
+          <SiGithub size="16" /> Source
         </a>
       </li>
       <li className='menu'>
