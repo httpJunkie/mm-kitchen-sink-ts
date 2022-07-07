@@ -10,7 +10,7 @@ interface AppRoute {
   href: string;
 }
 interface RouterLinksProps {
-  routes: AppRoute[]
+  routes: AppRoute[];
 }
 
 const RouterLinks = ({ routes }: RouterLinksProps) => {
@@ -34,8 +34,9 @@ const Menu = () => {
 
   const myAppRoutes: AppRoute[] = [
     { name: "Home", href: "/" },
-    { name: "Signing", href: "/signing" },
+    { name: "Sign", href: "/sign" },
     { name: "Chain", href: "/chain" },
+    { name: "NFT", href: "/nft" },
     { name: "Accounts", href: "/accounts" }
   ]
 

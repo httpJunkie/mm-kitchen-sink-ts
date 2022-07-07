@@ -5,10 +5,9 @@ import { ViewContext } from '../context/ViewContext'
 import SignMessage from '../components/ui/metamask/SignMessage'
 import VerifyMessage from '../components/ui/metamask/VerifyMessage'
 
-const Signing: NextPage = () => {
-  const { user, provider } = useContext(ViewContext)
+const Sign: NextPage = () => {
+  const { user } = useContext(ViewContext)
   const { address } = user
-  const message = 'I agree to the terms and services at:\nhttps://metamask.com/tos'
 
   return (
     <>
@@ -29,4 +28,4 @@ const Signing: NextPage = () => {
   )
 }
 
-export default Signing
+export default Sign
