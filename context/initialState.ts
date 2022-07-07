@@ -1,5 +1,5 @@
 export const initialState = {
-  // foxcon2022: null,
+  // NFTickets: null,
   isConnected: false,
   name: null,
   chainId: null,

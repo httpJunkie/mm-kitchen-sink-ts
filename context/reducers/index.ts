@@ -5,7 +5,7 @@ export const reducer = (state: any, action: any) => {
         state.signer = action.payload.signer
         state.name = action.payload.name
         state.chainId = action.payload.chainId
-        state.foxcon2022 = action.payload.foxcon2022
+        state.NFTickets = action.payload.NFTickets
         return
       }
       case 'SET_ACCOUNT': {
