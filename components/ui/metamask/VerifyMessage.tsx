@@ -63,7 +63,7 @@ export default function VerifyMessage() {
           </div>
         </div>
         <div>
-          <button type="submit">Verify signature</button>
+          <button type="submit">Verify</button>
         </div>
         <div>
           <ErrorMessage message={error} />

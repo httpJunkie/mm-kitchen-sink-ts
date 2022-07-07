@@ -48,13 +48,13 @@ export default function SignMessage() {
     <form onSubmit={handleSign}>
       <div>
         <div>
-          <h1>Sign messages</h1>
+          <h1>Sign message</h1>
           <div>
             <textarea required type="text" name="message" placeholder="Message" />
           </div>
         </div>
         <div>
-          <button type="submit">Sign message</button>
+          <button type="submit">Sign</button>
           <ErrorMessage message={error} />
         </div>
         {signatures.map((sig, idx) => {

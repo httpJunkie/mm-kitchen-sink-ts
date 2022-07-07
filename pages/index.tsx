@@ -20,8 +20,7 @@ const Home: NextPage = () => {
 
   return (
     <div className="home">
-      { 
-        !address
+      { !address
           ? <div>Not Connected to Ethereum</div> 
           : <SiEthereum size="40" />
       }

@@ -4904,6 +4904,11 @@ side-channel@^1.0.4:
     get-intrinsic "^1.0.2"
     object-inspect "^1.9.0"
 
+simple-flexbox@^2.3.3:
+  version "2.3.3"
+  resolved "https://registry.yarnpkg.com/simple-flexbox/-/simple-flexbox-2.3.3.tgz#2e6937bef834c3314ca4dc318052e39f41e37d80"
+  integrity sha512-5INKo4u1m5LDWBeEZXcAesIRxamrMCbcYInLg9Dz0A/7lwLMbIBKIon+71qVw91m3ivSB/5fA5KDObrt+VT6vg==
+
 slash@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/slash/-/slash-3.0.0.tgz#6539be870c165adbd5240220dbe361f1bc4d4634"
