@@ -2,6 +2,7 @@ import { useState, useRef } from "react"
 import { ethers } from "ethers"
 import ErrorMessage from "./ErrorMessage"
 import SuccessMessage from "./SuccessMessage"
+import Button from "../Button";
 
 interface Message {
   message: string;
@@ -63,7 +64,7 @@ export default function VerifyMessage() {
           </div>
         </div>
         <div>
-          <button type="submit">Verify</button>
+          <Button type="submit">Verify</Button>
         </div>
         <div>
           <ErrorMessage message={error} />
