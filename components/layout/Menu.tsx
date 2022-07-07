@@ -33,11 +33,11 @@ const Menu = () => {
   }
 
   const myAppRoutes: AppRoute[] = [
-    { name: "Home", href: "/" },
-    { name: "Sign", href: "/sign" },
-    { name: "Chain", href: "/chain" },
-    { name: "NFT", href: "/nft" },
-    { name: "Accounts", href: "/accounts" }
+    { name: "home", href: "/" },
+    { name: "accounts", href: "/accounts" },
+    { name: "chain", href: "/chain" },
+    { name: "mint", href: "/mint" },
+    { name: "sign", href: "/sign" }
   ]
 
   return (

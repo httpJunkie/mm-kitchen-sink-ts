@@ -3,23 +3,20 @@ import { useContext } from 'react'
 import { ViewContext } from '../context/ViewContext'
 import { Column, Row } from 'simple-flexbox'
 
-import SignMessage from '../components/ui/metamask/SignMessage'
-import VerifyMessage from '../components/ui/metamask/VerifyMessage'
-
-const Sign: NextPage = () => {
+const Mint: NextPage = () => {
   const { user } = useContext(ViewContext)
   const { address } = user
 
   return (
-    <div className="sign">
+    <div className="mint">
       {!address
         ? <div>Not Connected to Ethereum</div> 
         : <Row horizontal='spaced'>
             <Column flexGrow={1} style={{width:'45%', padding: 5}}>
-              <SignMessage />
+              <span>left</span>
             </Column>
             <Column flexGrow={1} style={{width:'55%', padding: 5}}>
-              <VerifyMessage  />
+              <span>right</span>
             </Column>
           </Row>
       }
