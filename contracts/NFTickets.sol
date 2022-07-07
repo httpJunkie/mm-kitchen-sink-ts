@@ -35,7 +35,7 @@ contract NFTickets is ERC721Enumerable, Ownable {
   // mapping (uint256 => bool) public gaTicketHolders;
   mapping (uint256 => bool) public vipTicketHolders;
 
-  constructor() ERC721("NFTickets", "FXC22") {
+  constructor() ERC721("NFTickets", "NFTIX") {
     _tokenIds._value = 999;
     _owner = msg.sender;
   }
