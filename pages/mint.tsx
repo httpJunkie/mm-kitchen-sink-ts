@@ -24,4 +24,4 @@ const Mint: NextPage = () => {
   )
 }
 
-export default Sign
+export default Mint
