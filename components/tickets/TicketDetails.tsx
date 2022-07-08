@@ -1,5 +1,5 @@
 import { useContext, useState } from 'react'
-import { ViewContext } from '../context/ViewContext'
+import { ViewContext } from '../../context/ViewContext'
 
 interface Ticket {
   type: string;

@@ -5,7 +5,7 @@ import { reducer } from './reducers/index'
 import { useImmerReducer } from 'use-immer'
 import { ethers } from 'ethers'
 
-import NFTicketsAbi from '../abi/NFTickets.json'
+import NFTicketsAbi from '../build/contracts/NFTickets.json'
 
 export const ViewContext = createContext(initialState)
 

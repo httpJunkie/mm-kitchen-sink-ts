@@ -7,7 +7,7 @@ import { ViewContext } from '../context/ViewContext'
 import { SiEthereum } from 'react-icons/si';
 
 const Home: NextPage = () => {
-  const { user } = useContext(ViewContext)
+  const { user, chainId } = useContext(ViewContext)
   const { address } = user
 
   const context = useContext(AppContext)
@@ -22,7 +22,9 @@ const Home: NextPage = () => {
     <div className="home">
       { !address
           ? <div>Not Connected to Ethereum</div> 
-          : <SiEthereum size="40" />
+          : address && chainId === 4 || chainId === 1
+            ? <SiEthereum size="40" />
+            : <span>Connected to: {chainId}, not Rinkeby</span>
       }
     </div>
   )
