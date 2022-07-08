@@ -1,5 +1,6 @@
-// import metaMask from '../../../assets/metamask.svg'
+import metaMaskLogo from '../../../../public/metamask.svg'
 import MetaMaskOnboarding from '@metamask/onboarding'
+import Button from '../../Button'
 // import detectEthereumProvider from '@metamask/detect-provider';
 
 // // This resolves to the value of window.ethereum or null
@@ -35,17 +36,17 @@ const InstallMetaMask = () => {
   useEffect(() => {
     if (MetaMaskOnboarding.isMetaMaskInstalled()) {
       if (accounts.length > 0) {
-        setButtonText('Connected')
+        setButtonText('Installed')
         setDisabled(true)
         onboarding.current.stopOnboarding()
       } else {
-        setButtonText('Connect')
+        setButtonText('Install')
         setDisabled(false)
       }
     }
   }, [accounts])
 
-  const onClick = () => {
+  const onBoard = () => {
     if (MetaMaskOnboarding.isMetaMaskInstalled()) {
       window.ethereum
         .request({ method: 'eth_requestAccounts' })
@@ -56,10 +57,10 @@ const InstallMetaMask = () => {
   }
 
   return (
-    <button disabled={isDisabled} onClick={onClick}>
-      {/* <img src={metaMask} alt="MetaMask Logo" /> */}
+    <Button disabled={isDisabled} handleClick={onBoard}>
+      <img src={metaMaskLogo} alt="MetaMask Logo" />
       {buttonText}
-    </button>
+    </Button>
   )
 }
 

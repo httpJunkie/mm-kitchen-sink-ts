@@ -3,6 +3,15 @@ import { ViewContext } from '../../../context/ViewContext'
 
 import Button from '../Button'
 
+interface Permissions {
+  caveats: Array<string>,
+  date: string,
+  id: number,
+  invoker: any,
+  parentCapability: any
+}
+
+
 const GetPermissions = () => {
   const { user, provider }: any = useContext(ViewContext)
   const { address } = user

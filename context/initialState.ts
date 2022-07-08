@@ -1,5 +1,6 @@
 export const initialState = {
-  // NFTickets: null,
+  actions: null,
+  nfTickets: null,
   isConnected: false,
   name: null,
   chainId: null,

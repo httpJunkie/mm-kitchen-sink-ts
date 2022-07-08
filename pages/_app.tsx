@@ -9,6 +9,7 @@ import '../styles/Link.scss'
 import '../styles/Logo.scss'
 import '../styles/Sidenav.scss'
 import '../styles/SuccessMessage.scss'
+import '../styles/Tickets.scss'
 import '../styles/Toggle.scss'
 import '../styles/Topnav.scss'
 
@@ -16,7 +17,7 @@ import type { AppProps } from 'next/app'
 import { ViewProvider } from '../context/ViewContext'
 import { AppProvider } from '../context/AppContext'
 
-import Layout from '../components/layout/Layout'
+import Layout from '../components/layout'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

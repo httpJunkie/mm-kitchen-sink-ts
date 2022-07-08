@@ -5,7 +5,7 @@ import { reducer } from './reducers/index'
 import { useImmerReducer } from 'use-immer'
 import { ethers } from 'ethers'
 
-// import NFTicketsAbi from '../lib/NFTickets.json'
+import NFTicketsAbi from '../abi/NFTickets.json'
 
 export const ViewContext = createContext(initialState)
 
@@ -18,7 +18,7 @@ export const smolNumberify = (amt, decimals = 18) =>
 
 export const ViewProvider = ({ children }) => {
   const [state, dispatch] = useImmerReducer(reducer, initialState)
-  // const NFTicketsAddress = process.env.REACT_APP_CONTRACT_ADDRESS
+  const NFTicketsAddress = process.env.NEXT_PUBLIC_CONTRACT_ADDRESS
 
   const setAccount = useCallback(async (accounts) => {
     if (accounts.length > 0) {
@@ -42,7 +42,7 @@ export const ViewProvider = ({ children }) => {
         if (provider) {
           const signer = await provider.getSigner()
           const { name, chainId } = await provider.getNetwork()
-          // const NFTickets = new ethers.Contract(NFTicketsAddress, NFTicketsAbi.abi, signer)
+          const NFTickets = new ethers.Contract(NFTicketsAddress, NFTicketsAbi.abi, signer)
           const accounts = await window.ethereum.request({ method: 'eth_accounts' })
           setAccount(accounts)
           dispatch({
@@ -51,9 +51,8 @@ export const ViewProvider = ({ children }) => {
               provider,
               signer,
               chainId,
-              name
-              // ,
-              // NFTickets
+              name,
+              NFTickets
             }
           })
         }
@@ -79,8 +78,7 @@ export const ViewProvider = ({ children }) => {
   }, [connectUser, dispatch])
 
   const { 
-    // NFTickets, 
-    isConnected, provider, signer, user, name, chainId 
+    NFTickets, isConnected, provider, signer, user, name, chainId 
   } = state
 
   const connect = async () => {
@@ -97,7 +95,7 @@ export const ViewProvider = ({ children }) => {
       value={{
         state,
         dispatch,
-        // NFTickets,
+        NFTickets,
         isConnected,
         provider,
         signer,
