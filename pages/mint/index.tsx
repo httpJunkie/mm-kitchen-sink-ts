@@ -1,6 +1,6 @@
 import type { NextPage } from 'next'
 import { useContext } from 'react'
-import { ViewContext } from '../context/ViewContext'
+import { ViewContext } from '../../context/ViewContext'
 import { Column, Row } from 'simple-flexbox'
 
 const Mint: NextPage = () => {
