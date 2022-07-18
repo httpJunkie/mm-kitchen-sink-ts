@@ -17,11 +17,10 @@ const Tickets = ({ tickets }: TicketsProps) => {
 console.log(tickets)
   let nftGrid = tickets.map((ticket, i) =>
     <div className="nft-card" key={`ticket${i}`}>
-      <a href={`/mint/${ticket.type}`}>
-        <div>{ticket.event}</div>
-        <div>{ticket.description}</div>
-        <br />
-      </a>
+      <Link href={`/mint/${ticket.type}`}>
+        <a className='text_link'>{ticket.event}</a>
+      </Link>
+      <div>{ticket.description}</div>
     </div>
   )
 
