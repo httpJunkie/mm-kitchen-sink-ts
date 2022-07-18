@@ -6,6 +6,7 @@ export const initialState = {
   chainId: null,
   provider: null,
   signer: null,
+  bigNumberify: null,
   user: {
     address: '',
     balance: 0

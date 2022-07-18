@@ -1,4 +1,4 @@
-import metamaskSvg from '../../../../public/metamask.svg'
+// import metamaskSvg from '../../../../public/metamask.svg'
 import MetaMaskOnboarding from '@metamask/onboarding'
 import Button from '../../Button'
 // import detectEthereumProvider from '@metamask/detect-provider';
@@ -58,7 +58,7 @@ const InstallMetaMask = () => {
 
   return (
     <Button disabled={isDisabled} handleClick={onBoard}>
-      <img src={metamaskSvg} alt="MetaMask Logo" />
+      {/* <img src={metamaskSvg} alt="MetaMask Logo" /> */}
       {buttonText}
     </Button>
   )
