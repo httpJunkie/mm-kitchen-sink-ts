@@ -1,6 +1,13 @@
 import { useContext, useState } from 'react'
 import { ViewContext } from '../../context/ViewContext'
 
+type StaticImageData = {
+  src: string;
+  height: number;
+  width: number;
+  placeholder?: string;
+}
+
 interface Ticket {
   type: string;
   event: string;
@@ -8,7 +15,7 @@ interface Ticket {
   priceHexValue: string;
   price: string;
   name: string;
-  exampleImage: string;
+  exampleImage: any;
 }
 interface TicketProps {
   ticket: Ticket;
