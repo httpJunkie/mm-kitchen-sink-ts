@@ -14,13 +14,14 @@ interface TicketsProps {
 }
 
 const Tickets = ({ tickets }: TicketsProps) => {
-
+console.log(tickets)
   let nftGrid = tickets.map((ticket, i) =>
     <div className="nft-card" key={`ticket${i}`}>
-      <Link href={`/${ticket.type}`}>
+      <a href={`/mint/${ticket.type}`}>
         <div>{ticket.event}</div>
         <div>{ticket.description}</div>
-      </Link>
+        <br />
+      </a>
     </div>
   )
 
