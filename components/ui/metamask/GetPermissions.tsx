@@ -11,7 +11,6 @@ interface Permissions {
   parentCapability: any
 }
 
-
 const GetPermissions = () => {
   const { user, provider }: any = useContext(ViewContext)
   const { address } = user
