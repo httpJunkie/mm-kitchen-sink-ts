@@ -2,6 +2,6 @@ export {};
 
 declare global {
   interface Window {
-    ethereum: string;
+    ethereum: any;
   }
 }
